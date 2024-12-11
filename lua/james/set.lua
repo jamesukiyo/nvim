@@ -23,3 +23,8 @@ vim.opt.relativenumber = true
 vim.opt.hlsearch = false
 
 vim.opt.colorcolumn = "80"
+
+vim.opt.cursorline = true
+
+vim.opt.shell = "C:/Program Files/Git/bin/bash.exe"
+vim.opt.shellcmdflag = "-s"

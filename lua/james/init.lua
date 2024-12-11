@@ -9,8 +9,9 @@ require('james.remap')
 
 require('james.lazy_init')
 
+local autocmd = vim.api.nvim_create_autocmd
 
-vim.api.nvim_create_autocmd('TextYankPost', {
+autocmd('TextYankPost', {
   callback = function()
     vim.highlight.on_yank({ higroup = 'Visual', timeout = 500 })
   end,

@@ -26,6 +26,8 @@ map('n', '<C-l>', '<C-w>l')
 
 -- Quickly remove search highlighting
 map('n', '<Esc>', ':noh<CR>')
+map('n', 'jk', '<Esc>')
+map('n', 'kj', '<Esc>')
 
 -- Insert mode mappings
 map('i', 'jk', '<Esc>')

@@ -7,10 +7,11 @@ return {
     config = function()
         require("toggleterm").setup({
             open_mapping = [[<leader>t]],
-            direction = "float",
-            float_opts = {
-                border = "curved",
-            },
+            direction = "vertical",
+            size = 70
+            -- float_opts = {
+            --    border = "curved",
+            -- },
         })
     end
 

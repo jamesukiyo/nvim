@@ -22,12 +22,13 @@ return {
         "navarasu/onedark.nvim",
         config = function()
             require("onedark").setup({
+                transparent = true,
                 style = "warmer",
                 lualine = {
                     transparent = true,
                 }
             })
-            vim.cmd("colorscheme onedark")
+            -- vim.cmd("colorscheme onedark")
         end
     },
 
@@ -38,8 +39,8 @@ return {
             require('rose-pine').setup({
                 disable_background = true,
             })
-            -- vim.cmd("colorscheme rose-pine")
-            -- Coloringz()
+            vim.cmd("colorscheme rose-pine")
+            Coloringz()
         end
     },
 

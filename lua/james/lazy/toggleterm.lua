@@ -2,11 +2,11 @@ return {
 
     'akinsho/toggleterm.nvim', 
     version = "*", 
-    config = true,
 
     config = function()
         require("toggleterm").setup({
             open_mapping = [[<leader>t]],
+            insert_mappings = false,
             direction = "vertical",
             size = 70
             -- float_opts = {

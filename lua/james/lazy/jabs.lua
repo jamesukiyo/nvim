@@ -8,7 +8,7 @@ return {
         local map = vim.keymap.set
         require("jabs").setup({
             position = "center",
-            border= "single",
+            border = "single",
             sort_mru  = true,
         })
         map("n", "<leader>o", ":JABSOpen<CR>")

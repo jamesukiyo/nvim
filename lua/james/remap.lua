@@ -2,7 +2,11 @@ vim.g.mapleader = ' '
 
 local map = vim.keymap.set
 
-map('n', '<C-s>', ":NvimTreeToggle<CR>")
+-- thanks primeagen
+map("x", "<leader>p", [["_dP]]) -- paste over text but keep clipboard
+map({"n", "v"}, "<leader>y", [["+y]]) -- yank to system clipboard
+map("n", "<leader>Y", [["+Y]]) -- yank line to system clipboard
+map({"n", "v"}, "<leader>d", "\"_d") -- delete without yanking
 
 -- Center cursor on various movements
 map('n', '<C-d>', '<C-d>zz')
@@ -26,8 +30,8 @@ map('n', '<C-l>', '<C-w>l')
 
 -- Quickly remove search highlighting
 map('n', '<Esc>', ':noh<CR>')
-map('n', 'jk', '<Esc>')
-map('n', 'kj', '<Esc>')
+map('n', '<nowait> jk', '<Esc>')
+map('n', '<nowait> kj', '<Esc>')
 
 -- Insert mode mappings
 map('i', 'jk', '<Esc>')
@@ -39,5 +43,6 @@ map('v', '<C-d>', '<C-d>zz')
 map('v', '<C-u>', '<C-u>zz')
 map('v', 'n', 'nzz')
 map('v', 'N', 'Nzz')
-map('v', 'jk', '<Esc>')
+map('v', '<nowait> jk', '<Esc>')
+map('v', '<nowait> kj', '<Esc>')
 map('v', '<Esc>', '<nop>')

@@ -1,9 +1,10 @@
 return {
 
-    "akinsho/bufferline.nvim",
+    'echasnovski/mini.tabline', 
+    version = '*',
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
-        require("bufferline").setup({})
+        require("mini.tabline").setup({})
     end
     
 }

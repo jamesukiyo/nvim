@@ -89,7 +89,8 @@ return {
         })
         vim.api.nvim_create_autocmd("LspAttach", {
             callback = function(e)
-                vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+                vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts, { desc = "Go to definition" })
+                vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts, { desc = "Hover" })
             end
         })
     end

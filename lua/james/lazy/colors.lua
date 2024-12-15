@@ -1,6 +1,18 @@
+
+function ColorMyPencils(color)
+    color = color or "rose-pine"
+    vim.cmd.colorscheme(color)
+
+    -- transparent background
+    vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
+    vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
+    vim.api.nvim_set_hl(0, "NormalNC", {bg = "none"})
+end
+
 return {
     {
         "navarasu/onedark.nvim",
+        enabled = false,
         priority = 1000,
         config = function()
             require("onedark").setup({
@@ -16,19 +28,25 @@ return {
     },
     {
         "rose-pine/neovim",
+        enabled = false,
+        priority = 1000,
         name = "rose-pine",
         config = function()
             require('rose-pine').setup({
                 disable_background = true,
-                styles = { transparent = true },
+                dim_inactive_windows = true,
+                styles = { italic = false, transparency = true },
             })
-            -- vim.cmd("colorscheme rose-pine")
+
+            -- vim.cmd("colorscheme rose-pine-moon")
             vim.cmd("colorscheme rose-pine")
+            ColorMyPencils()
             -- vim.cmd("colorscheme rose-pine-dawn")
         end
     },
     {
         "folke/tokyonight.nvim",
+        enabled = false,
         name = "tokyonight",
         priority = 1000,
         config = function()
@@ -48,6 +66,7 @@ return {
     },
     {
         "ellisonleao/gruvbox.nvim",
+        enabled = false,
         priority = 1000,
         config = function()
             require("gruvbox").setup({
@@ -66,17 +85,17 @@ return {
             require("catppuccin").setup({
                 transparent = true,
                 term_colors = true,
-                dim_inactive = {
-                    enabled = true,
-                    shade = "dark",
-                    percentage = 0.2,
-                },
+                dim_inactive = { enabled = true, shade = "dark", percentage = 0.5, },
                 show_end_of_buffer = true,
+                integrations = {
+                    telescope = { enabled = true },
+                    mini = { enabled = true },
+                },
             })
             -- vim.cmd("colorscheme catppuccin-latte")
             -- vim.cmd("colorscheme catppuccin-frappe")
             -- vim.cmd("colorscheme catppuccin-macchiato")
-            -- vim.cmd("colorscheme catppuccin-mocha")
+            ColorMyPencils("catppuccin-mocha")
         end
     }
 

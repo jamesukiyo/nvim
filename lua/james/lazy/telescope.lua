@@ -9,8 +9,8 @@ return {
         local builtin = require('telescope.builtin')
         require("telescope").setup({})
 
-        map('n', '<leader>ff', builtin.find_files, {})
-        map('n', '<leader>fg', builtin.live_grep, {})
+        map('n', '<leader>ff', builtin.find_files, {}, { desc = "Find files" })
+        map('n', '<leader>fg', builtin.live_grep, {}, { desc = "Live grep" })
     end
 
 }

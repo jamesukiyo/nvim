@@ -28,3 +28,7 @@ vim.opt.cursorline = true
 
 vim.opt.shell = "C:\\Program Files\\Git\\bin\\bash.exe"
 vim.opt.shellcmdflag = "-s"
+
+vim.opt.updatetime = 50
+
+vim.opt.guicursor = ""

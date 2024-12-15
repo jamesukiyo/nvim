@@ -35,7 +35,7 @@ map('n', '<nowait> jk', '<Esc>', { desc = "Escape" })
 map('n', '<nowait> kj', '<Esc>', { desc = "Escape" })
 
 -- Insert mode mappings
-map('i', 'jk', '<Esc>', { desc = "Escape" })
+map('i', 'jk', '<Esc>',{ desc = "Escape" })
 map('i', 'kj', '<Esc>', { desc = "Escape" })
 map('i', '<Esc>', '<nop>', { desc = "Esc = dead key" })
 
@@ -44,11 +44,11 @@ map('v', '<C-d>', '<C-d>zz', { desc = "1/2 page down + center cursor" })
 map('v', '<C-u>', '<C-u>zz', { desc = "1/2 page up + center cursor" })
 map('v', 'n', 'nzz', { desc = "center cursor on next search result" })
 map('v', 'N', 'Nzz', { desc = "center cursor on previous search result" })
-map('v', '<nowait> jk', '<Esc>', { desc = "Escape" })
-map('v', '<nowait> kj', '<Esc>', { desc = "Escape" })
+map('v', 'jk', '<Esc>', { desc = "Escape" })
+map('v', 'kj', '<Esc>', { desc = "Escape" })
 map('v', '<Esc>', '<nop>', { desc = "Esc = dead key" })
 
 -- switch buffers
-map('n', '<leader>h', vim.cmd.bprevious, { desc = "previous buffer" })
-map('n', '<leader>l', vim.cmd.bnext, { desc = "next buffer" })
-map('n', '<leader>qq', vim.cmd.bdelete, { desc = "close buffer" })
+map('n', '<leader>h', ":bprevious<CR>", { desc = "previous buffer" })
+map('n', '<leader>l', ":bnext<CR>", { desc = "next buffer" })
+map('n', '<leader>qq', ":bdelete<CR>", { desc = "close buffer" })

@@ -20,9 +20,9 @@ return {
         -- map("n", "<Leader>l", function() harpoon:list():select(4) end)
 
         -- Toggle previous & next buffers stored within Harpoon list
-        map("n", "<Leader>h", function() harpoon:list():prev() end,
+        map("n", "<Leader>j", function() harpoon:list():prev() end,
             { desc = "Previous harpoon" })
-        map("n", "<Leader>l", function() harpoon:list():next() end,
+        map("n", "<Leader>k", function() harpoon:list():next() end,
             { desc = "Next harpoon" })
     end
 

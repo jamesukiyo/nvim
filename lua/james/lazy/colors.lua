@@ -9,6 +9,9 @@ function ColorMyPencils(color)
     vim.api.nvim_set_hl(0, "NormalNC", {bg = "none"})
 end
 
+
+Color_Scheme = "catppuccin"
+
 return {
     {
         "navarasu/onedark.nvim",
@@ -39,9 +42,8 @@ return {
             })
 
             -- vim.cmd("colorscheme rose-pine-moon")
-            vim.cmd("colorscheme rose-pine")
-            ColorMyPencils()
             -- vim.cmd("colorscheme rose-pine-dawn")
+            -- vim.cmd("colorscheme rose-pine")
         end
     },
     {
@@ -83,21 +85,30 @@ return {
         priority = 1000,
         config = function()
             require("catppuccin").setup({
+                flavour = "mocha", -- latte, frappe, macchiato, mocha
+                background = { dark = "mocha" },
                 transparent = true,
                 term_colors = true,
                 dim_inactive = { enabled = true, shade = "dark", percentage = 0.5, },
                 show_end_of_buffer = true,
                 integrations = {
                     telescope = { enabled = true },
-                    mini = { enabled = true },
+                    mini = { enabled = true, indentscope_color = "lavender" },
+                    mason = true,
+                    harpoon = true,
+                    cmp = true,
+                    treesitter = true,
+                    which_key = true,
+                    gitsigns = true,
                 },
+                custom_highlights = function(colors)
+                    return {
+                        LineNr = { fg = colors.overlay1 },
+                    }
+                end,
             })
-            -- vim.cmd("colorscheme catppuccin-latte")
-            -- vim.cmd("colorscheme catppuccin-frappe")
-            -- vim.cmd("colorscheme catppuccin-macchiato")
-            ColorMyPencils("catppuccin-mocha")
+            ColorMyPencils(Color_Scheme)
+
         end
-    }
-
-
+    },
 }

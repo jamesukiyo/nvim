@@ -2,7 +2,7 @@ return {
 
     "folke/which-key.nvim",
     enabled = false,
-     vent = "VeryLazy",
+    event = "VeryLazy",
     keys = {
         {
             "<leader>?",

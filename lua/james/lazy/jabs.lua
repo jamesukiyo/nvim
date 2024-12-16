@@ -22,6 +22,9 @@ return {
                 default_file = "D", -- Filetype icon if not present in nvim-web-devicons. Default 
                 terminal_symbol = ">_" -- Filetype icon for a terminal split. Default 
             },
+            keymap = {
+                h_split = "h",
+            }
         })
         map("n", "<leader>o", ":JABSOpen<CR>")
     end,

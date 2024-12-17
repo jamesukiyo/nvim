@@ -14,7 +14,8 @@ return {
             --    border = "curved",
             -- },
             --           highlights = highlights,
-            start_in_insert = false,
+            start_in_insert = true,
+            close_on_exit = true,
         })
         map("n", "<leader>tt", vim.cmd.ToggleTerm)
         map("t", "jk", [[<C-\><C-n>]])

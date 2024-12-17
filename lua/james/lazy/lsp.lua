@@ -36,6 +36,8 @@ return {
                 "tailwindcss",
                 "ts_ls",
                 "svelte",
+                "eslint",
+                "jsonls",
             },
             automatic_installation = true,
             handlers = {
@@ -53,6 +55,19 @@ return {
         require('lspconfig').ts_ls.setup{
 
         }
+
+        require('lspconfig').eslint.setup{
+
+        }
+
+        require('lspconfig').tailwindcss.setup{
+
+        }
+
+        require('lspconfig').lua_ls.setup{
+
+        }
+
 
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
 

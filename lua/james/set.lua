@@ -26,7 +26,7 @@ vim.opt.colorcolumn = "80"
 
 vim.opt.cursorline = true
 
-vim.opt.shell = "C:\\Program Files\\Git\\bin\\bash.exe"
+vim.opt.shell = '"C:/Program Files/Git/bin/bash.exe"'
 vim.opt.shellcmdflag = "-s"
 
 vim.opt.updatetime = 50

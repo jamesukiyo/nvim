@@ -36,7 +36,7 @@ return {
                 "tailwindcss",
                 "ts_ls",
                 "svelte",
-                "eslint",
+              --  "eslint",
                 "jsonls",
             },
             automatic_installation = true,
@@ -56,9 +56,7 @@ return {
 
         }
 
-        require('lspconfig').eslint.setup{
-
-        }
+        --require('lspconfig').eslint.setup{ }
 
         require('lspconfig').tailwindcss.setup{
 
@@ -105,7 +103,7 @@ return {
         vim.api.nvim_create_autocmd("LspAttach", {
             callback = function(e)
                 vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts, { desc = "Go to definition" })
-                -- vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts, { desc = "Hover" }) -- configured in ufo.lua
+                vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts, { desc = "Hover" })
             end
         })
     end

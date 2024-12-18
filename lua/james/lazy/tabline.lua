@@ -1,6 +1,7 @@
 return {
 
-    'echasnovski/mini.tabline', 
+    'echasnovski/mini.tabline',
+    enabled = false,
     version = '*',
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()

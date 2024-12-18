@@ -32,3 +32,7 @@ vim.opt.shellcmdflag = "-s"
 vim.opt.updatetime = 50
 
 vim.opt.guicursor = ""
+
+vim.opt.undofile = true
+vim.opt.swapfile = false
+vim.opt.backup = false

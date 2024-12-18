@@ -1,5 +1,5 @@
 return {
-
+    {
     'echasnovski/mini.files', 
     version = '*',
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -12,8 +12,16 @@ return {
                 preview = false,
             }
         })
-        map('n', '<C-s>', function() vim.cmd("lua MiniFiles.open()") end, 
+        map('n', '<C-s>', function() vim.cmd("lua MiniFiles.open()") end,
             { desc = "Open file explorer" })
     end
-
+    },
+    {
+        'stevearc/oil.nvim',
+        enabled = false,
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        config = function()
+            require('oil').setup()
+        end
+    },
 }

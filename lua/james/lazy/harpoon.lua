@@ -6,7 +6,12 @@ return {
     config = function()
         local harpoon = require("harpoon")
         local map = vim.keymap.set
-        harpoon:setup()
+        harpoon:setup({
+            settings = {
+                save_on_toggle = true,
+                save_on_ui_close = true,
+            },
+        })
         -- Harpoon Keymaps
         map("n", "<leader>a", function() harpoon:list():add() end,
             { desc = "Add to harpoon" })

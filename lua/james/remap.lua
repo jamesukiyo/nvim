@@ -52,3 +52,6 @@ map('v', '<Esc>', '<nop>', { desc = "Esc = dead key" })
 map('n', '<leader>h', ":bprevious<CR>", { desc = "previous buffer" })
 map('n', '<leader>l', ":bnext<CR>", { desc = "next buffer" })
 map('n', '<leader>qq', ":bdelete<CR>", { desc = "close buffer" })
+
+map('n', '<leader>gg', "gg=G``", {desc = "Indent entire file and return to last edit position"})
+

@@ -8,12 +8,16 @@ return {
         --        local highlights = require ("rose-pine.plugins.toggleterm")
         require("toggleterm").setup({
             insert_mappings = false,
-            direction = "vertical",
-            size = 70,
-            -- float_opts = {
-            --    border = "curved",
-            -- },
-            --           highlights = highlights,
+            persist_size = false,
+            persist_mode = false,
+            direction = "float",
+            -- size = 70,
+            float_opts = {
+                border = "curved",
+                width = 100,
+                height = 60,
+            },
+            --  highlights = highlights,
             start_in_insert = true,
             close_on_exit = true,
         })

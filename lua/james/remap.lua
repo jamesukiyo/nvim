@@ -55,3 +55,4 @@ map('n', '<leader>qq', ":bdelete<CR>", { desc = "close buffer" })
 
 map('n', '<leader>gg', "gg=G``", {desc = "Indent entire file and return to last edit position"})
 
+map('n', '<leader>tt', "<cmd>:vs<cr><cmd>term<cr>", { desc = "open a terminal in a vertical split" })

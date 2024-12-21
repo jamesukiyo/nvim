@@ -1,6 +1,7 @@
 return {
 
     'akinsho/toggleterm.nvim', 
+    enabled = false,
     version = "*", 
 
     config = function()
@@ -21,7 +22,7 @@ return {
             start_in_insert = true,
             close_on_exit = true,
         })
-        map("n", "<leader>tt", vim.cmd.ToggleTerm)
+       --- map("n", "<leader>tt", vim.cmd.ToggleTerm)
         map("t", "jk", [[<C-\><C-n>]])
         map("t", "kj", [[<C-\><C-n>]])
     end

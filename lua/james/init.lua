@@ -16,3 +16,10 @@ autocmd('TextYankPost', {
     vim.highlight.on_yank({ higroup = 'Visual', timeout = 500 })
   end,
 })
+
+autocmd("VimResized", {
+  pattern = "*",
+  callback = function()
+    vim.cmd("wincmd =")
+  end
+})

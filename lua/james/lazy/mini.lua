@@ -56,5 +56,14 @@ return {
             require("mini.ai").setup()
         end,
     },
+    {
+        'echasnovski/mini.bufremove',
+        version = '*',
+        config = function()
+            require("mini.bufremove").setup()
+
+            vim.keymap.set('n', '<leader>qq', function() vim.cmd("lua MiniBufremove.delete()") end, { desc = "close buffer" })
+        end
+    },
 
 }

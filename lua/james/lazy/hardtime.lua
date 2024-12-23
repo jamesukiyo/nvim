@@ -4,7 +4,7 @@ return {
 
     config = function()
         require("hardtime").setup({
-            disabled_filetypes = { "qf", "netrw", "NvimTree", "lazy", "mason", "oil", "JABSwindow", "trouble", "Trouble", "undotree" },
+            disabled_filetypes = { "qf", "netrw", "NvimTree", "lazy", "mason", "oil", "JABSwindow", "trouble", "Trouble", "undotree", "minifiles" },
         })
     end
 }

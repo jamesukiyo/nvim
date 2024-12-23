@@ -60,19 +60,23 @@ return {
         require("luasnip.loaders.from_vscode").lazy_load( { paths = { "~/appdata/local/nvim/lua/james/snippets" } } )
 
         require('lspconfig').svelte.setup{
+            capabilities = capabilities,
 
         }
         require('lspconfig').ts_ls.setup{
+            capabilities = capabilities,
 
         }
 
         --require('lspconfig').eslint.setup{ }
 
         require('lspconfig').tailwindcss.setup{
+            capabilities = capabilities,
 
         }
 
         require('lspconfig').lua_ls.setup{
+            capabilities = capabilities,
             settings = {
                 Lua = {
                     diagnostics = {
@@ -152,9 +156,14 @@ return {
             end,
         })
         vim.api.nvim_create_autocmd("LspAttach", {
-            callback = function()
-                vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, { desc = "Go to definition" })
-                vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, { desc = "Hover" })
+            callback = function(args)
+                local client = vim.lsp.get_client_by_id(args.data.client_id)
+                if client:supports_method('textDocument/foldingRange') then
+                    vim.wo.foldmethod = 'expr'
+                    vim.wo.foldexpr = 'v:lua.vim.lsp.foldexpr()'
+                    vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, { desc = "Go to definition" })
+                    vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, { desc = "Hover" })
+                end
             end
         })
     end

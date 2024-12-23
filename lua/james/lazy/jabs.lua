@@ -24,6 +24,8 @@ return {
             },
             keymap = {
                 h_split = "h",
+                v_split = "v",
+                close = "dd"
             }
         })
         map("n", "<leader>o", ":JABSOpen<CR>")

@@ -28,6 +28,7 @@ return {
     },
     {
         "folke/twilight.nvim",
+        enabled = false,
         config = function()
             require("twilight").setup({
                 dimming = {

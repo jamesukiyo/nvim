@@ -73,7 +73,13 @@ return {
         }
 
         require('lspconfig').lua_ls.setup{
-
+            settings = {
+                Lua = {
+                    diagnostics = {
+                        globals = { "vim" },
+                    },
+                },
+            },
         }
 
 
@@ -130,6 +136,7 @@ return {
 
         vim.diagnostic.config({
             -- update_in_insert = true,
+            virtual_text = false,
             float = {
                 focusable = false,
                 style = "minimal",
@@ -139,10 +146,15 @@ return {
                 prefix = "",
             },
         })
+        vim.api.nvim_create_autocmd({ "CursorHold" }, {
+            callback = function()
+                vim.diagnostic.open_float()
+            end,
+        })
         vim.api.nvim_create_autocmd("LspAttach", {
-            callback = function(e)
-                vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts, { desc = "Go to definition" })
-                vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts, { desc = "Hover" })
+            callback = function()
+                vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, { desc = "Go to definition" })
+                vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, { desc = "Hover" })
             end
         })
     end

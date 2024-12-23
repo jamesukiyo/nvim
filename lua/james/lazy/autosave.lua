@@ -1,6 +1,7 @@
 return {
 
     "okuuva/auto-save.nvim",
+    enabled = false,
     config = function()
         require("auto-save").setup({
             trigger_events = {"InsertLeave", "TextChanged"},

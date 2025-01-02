@@ -29,24 +29,11 @@ map('n', '<C-j>', '<C-w>j', { desc = "switch to below pane" })
 map('n', '<C-k>', '<C-w>k', { desc = "switch to above pane" })
 map('n', '<C-l>', '<C-w>l', { desc = "switch to right pane" })
 
--- Quickly remove search highlighting
-map('n', '<Esc>', ':noh<CR>', { desc = "clear search highlighting" })
-map('n', '<nowait> jk', '<Esc>', { desc = "Escape" })
-map('n', '<nowait> kj', '<Esc>', { desc = "Escape" })
-
--- Insert mode mappings
-map('i', 'jk', '<Esc>',{ desc = "Escape" })
-map('i', 'kj', '<Esc>', { desc = "Escape" })
-map('i', '<Esc>', '<nop>', { desc = "Esc = dead key" })
-
 -- Visual mode mappings
 map('v', '<C-d>', '<C-d>zz', { desc = "1/2 page down + center cursor" })
 map('v', '<C-u>', '<C-u>zz', { desc = "1/2 page up + center cursor" })
 map('v', 'n', 'nzz', { desc = "center cursor on next search result" })
 map('v', 'N', 'Nzz', { desc = "center cursor on previous search result" })
-map('v', 'jk', '<Esc>', { desc = "Escape" })
-map('v', 'kj', '<Esc>', { desc = "Escape" })
-map('v', '<Esc>', '<nop>', { desc = "Esc = dead key" })
 
 -- switch buffers
 map('n', '<leader>h', ":bprevious<CR>", { desc = "previous buffer" })

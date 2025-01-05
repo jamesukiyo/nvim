@@ -13,6 +13,12 @@ end
 Color_Scheme = "catppuccin"
 
 return {
+    { 
+        'dasupradyumna/midnight.nvim',
+        enabled = false,
+        lazy = false, 
+        priority = 1000 
+    },
     {
         "navarasu/onedark.nvim",
         enabled = false,

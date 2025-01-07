@@ -63,7 +63,7 @@ return {
         config = function()
             require("mini.bufremove").setup()
 
-            vim.keymap.set('n', '<leader>qq', function() vim.cmd("lua MiniBufremove.delete()") end, { desc = "close buffer" })
+            vim.keymap.set('n', '<leader>qb', function() vim.cmd("lua MiniBufremove.delete()") end, { desc = "close buffer" })
         end
     },
 

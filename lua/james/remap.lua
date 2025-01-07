@@ -38,8 +38,9 @@ map('v', 'N', 'Nzz', { desc = "center cursor on previous search result" })
 -- switch buffers
 map('n', '<leader>h', ":bprevious<CR>", { desc = "previous buffer" })
 map('n', '<leader>l', ":bnext<CR>", { desc = "next buffer" })
--- map('n', '<leader>qq', ":bdelete<CR>", { desc = "close buffer" }) -- now in mini.bufremove
 
 map('n', '<leader>gg', "gg=G``", {desc = "Indent entire file and return to last edit position"})
 
 map('n', '<leader>tt', "<cmd>:vs<cr><cmd>term<cr>", { desc = "open a terminal in a vertical split" })
+
+map('n', '<leader>qq', "<cmd>clo<cr>", { desc = "close window" })

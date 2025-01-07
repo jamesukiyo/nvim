@@ -34,7 +34,8 @@ return {
     },
 
     {
-        'echasnovski/mini.files', 
+        'echasnovski/mini.files',
+        enabled = false,
         version = '*',
         dependencies = { "nvim-tree/nvim-web-devicons" },
 

@@ -66,5 +66,10 @@ return {
             vim.keymap.set('n', '<leader>qb', function() vim.cmd("lua MiniBufremove.delete()") end, { desc = "close buffer" })
         end
     },
-
+    {
+        'echasnovski/mini.pairs', version = '*',
+        config = function()
+            require("mini.pairs").setup()
+        end,
+    },
 }

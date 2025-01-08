@@ -10,7 +10,7 @@ function ColorMyPencils(color)
 end
 
 
-Color_Scheme = "catppuccin"
+Color_Scheme = "rose-pine"
 
 return {
     { 
@@ -37,7 +37,7 @@ return {
     },
     {
         "rose-pine/neovim",
-        enabled = false,
+        enabled = true,
         priority = 1000,
         name = "rose-pine",
         config = function()
@@ -46,7 +46,7 @@ return {
                 dim_inactive_windows = true,
                 styles = { italic = false, transparency = true },
             })
-
+            ColorMyPencils(Color_Scheme)
             -- vim.cmd("colorscheme rose-pine-moon")
             -- vim.cmd("colorscheme rose-pine-dawn")
             -- vim.cmd("colorscheme rose-pine")
@@ -88,6 +88,7 @@ return {
     {
         "catppuccin/nvim",
         name = "catppuccin",
+        enabled = false,
         priority = 1000,
         config = function()
             require("catppuccin").setup({
@@ -117,4 +118,79 @@ return {
 
         end
     },
+    {
+        'maxmx03/fluoromachine.nvim',
+        enabled = false,
+        lazy = false,
+        priority = 1000,
+        config = function()
+            local fm = require 'fluoromachine'
+
+            fm.setup {
+                glow = true,
+                theme = 'fluoromachine',
+                transparent = true,
+            }
+
+            vim.cmd.colorscheme 'fluoromachine'
+        end
+    },
+    {
+        "Yazeed1s/oh-lucy.nvim",
+        enabled = false,
+        lazy = false,
+        priority = 1000,
+        config = function()
+            vim.g.oh_lucy_evening_transparent_background = true
+            vim.cmd.colorscheme 'oh-lucy-evening'
+        end
+    },
+    {
+        {
+            'AmberLehmann/candyland.nvim',
+            priority = 1000,
+            enabled = false,
+            config = function()
+                ColorMyPencils("candyland")
+            end
+        }
+    },
+    {
+        "miikanissi/modus-themes.nvim",
+        priority = 1000,
+        enabled = false,
+        config = function()
+            require("modus-themes").setup({
+                style = "modus_vivendi",
+                transparent = true,
+                dim_inactive = true,
+                styles = {
+                    comments = { italic = false },
+                    keywords = { italic = false },
+                },
+            })
+            ColorMyPencils("modus")
+        end
+    },
+    {
+        "ishan9299/modus-theme-vim",
+        enabled = false,
+        lazy = false,
+        priority = 1000,
+        config = function()
+            vim.g.modus_termtrans_enable = 1
+            ColorMyPencils("modus-vivendi")
+        end
+    },
+    {
+        "zenbones-theme/zenbones.nvim",
+        lazy = false,
+        enabled = false,
+        priority = 1000,
+        config = function()
+            vim.g.bones_compat = 1
+            vim.g.zenbones_transparent_background = 1
+            ColorMyPencils(Color_Scheme)
+        end
+    }
 }

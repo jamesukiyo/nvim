@@ -1,12 +1,7 @@
 return {
 
     "mawkler/modicator.nvim",
-    dependencies = {
-        "rose-pine/neovim",
-        "catppuccin/nvim",
-        "folke/tokyonight.nvim",
-        "navarasu/onedark.nvim",
-    },
+    enabled = false,
 
     config = function()
         require("modicator").setup({

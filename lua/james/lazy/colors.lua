@@ -1,4 +1,3 @@
-
 function ColorMyPencils(color)
     color = color or "rose-pine"
     vim.cmd.colorscheme(color)
@@ -7,17 +6,21 @@ function ColorMyPencils(color)
     vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
     vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
     vim.api.nvim_set_hl(0, "NormalNC", {bg = "none"})
+
+    vim.api.nvim_set_hl(0, 'LineNrAbove', { fg='#BFBFBF', bold=false })
+    vim.api.nvim_set_hl(0, 'LineNr', { fg='white', bold=true })
+    vim.api.nvim_set_hl(0, 'LineNrBelow', { fg='#BFBFBF', bold=false })
 end
 
 
-Color_Scheme = "rose-pine"
+Color_Scheme = "moonfly"
 
 return {
-    { 
+    {
         'dasupradyumna/midnight.nvim',
         enabled = false,
-        lazy = false, 
-        priority = 1000 
+        lazy = false,
+        priority = 1000
     },
     {
         "navarasu/onedark.nvim",
@@ -37,7 +40,7 @@ return {
     },
     {
         "rose-pine/neovim",
-        enabled = true,
+        enabled = false,
         priority = 1000,
         name = "rose-pine",
         config = function()
@@ -189,8 +192,45 @@ return {
         priority = 1000,
         config = function()
             vim.g.bones_compat = 1
-            vim.g.zenbones_transparent_background = 1
+            vim.g.zenbones_transparent_background = 0
+            vim.g.zenbones_solid_line_nr = 1
+            vim.g.zenbones_italic_comments = 0
+            vim.g.zenbones_lighten_line_nr = 10000000000
             ColorMyPencils(Color_Scheme)
         end
-    }
+    },
+    {
+        "nyoom-engineering/oxocarbon.nvim",
+        lazy = false,
+        enabled = false,
+        priority = 1000,
+        config = function()
+            require("oxocarbon").setup({})
+            ColorMyPencils("oxocarbon")
+        end
+    },
+    {
+        'aliqyan-21/darkvoid.nvim',
+        lazy = false,
+        enabled = false,
+        priority = 1000,
+        config = function()
+            require("darkvoid").setup({
+                transparent = true,
+                show_end_of_buffer = true,
+            })
+            ColorMyPencils("darkvoid")
+        end
+    },
+    {
+        "bluz71/vim-moonfly-colors",
+        name = "moonfly",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            vim.g.moonflyItalics = false
+            vim.g.moonflyUndercurls = false
+            ColorMyPencils("moonfly")
+        end
+    },
 }

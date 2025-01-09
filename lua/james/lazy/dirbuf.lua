@@ -6,6 +6,7 @@ return {
             sort_order = "directories_first"
         })
         vim.keymap.set("n", "<C-s>", "<cmd>Dirbuf<CR>")
+        vim.keymap.set("n", "-", "")
     end,
 
 }

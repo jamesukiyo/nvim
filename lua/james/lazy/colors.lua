@@ -1,5 +1,6 @@
 function ColorMyPencils(color)
     color = color or "rose-pine"
+    vim.opt.background = "dark"
     vim.cmd.colorscheme(color)
 
     -- transparent background
@@ -13,7 +14,7 @@ function ColorMyPencils(color)
 end
 
 
-Color_Scheme = "moonfly"
+Color_Scheme = "serene"
 
 return {
     {
@@ -161,6 +162,7 @@ return {
     {
         "miikanissi/modus-themes.nvim",
         priority = 1000,
+        lazy = false,
         enabled = false,
         config = function()
             require("modus-themes").setup({
@@ -182,6 +184,8 @@ return {
         priority = 1000,
         config = function()
             vim.g.modus_termtrans_enable = 1
+            vim.g.modus_green_strings = 1
+            vim.g.modus_cursorline_intense = 1
             ColorMyPencils("modus-vivendi")
         end
     },
@@ -196,7 +200,7 @@ return {
             vim.g.zenbones_solid_line_nr = 1
             vim.g.zenbones_italic_comments = 0
             vim.g.zenbones_lighten_line_nr = 10000000000
-            ColorMyPencils(Color_Scheme)
+            ColorMyPencils("rosebones")
         end
     },
     {
@@ -217,6 +221,7 @@ return {
         config = function()
             require("darkvoid").setup({
                 transparent = true,
+                glow = true,
                 show_end_of_buffer = true,
             })
             ColorMyPencils("darkvoid")
@@ -224,13 +229,53 @@ return {
     },
     {
         "bluz71/vim-moonfly-colors",
+        enabled = false,
         name = "moonfly",
         lazy = false,
         priority = 1000,
         config = function()
+            vim.g.moonflyWinSeparator = 0
             vim.g.moonflyItalics = false
             vim.g.moonflyUndercurls = false
             ColorMyPencils("moonfly")
         end
     },
+    {
+        "slugbyte/lackluster.nvim",
+        enabled = false,
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require("lackluster").setup({
+                tweak_ui = {
+                    disable_undercurl = true,
+                    enable_end_of_buffer = true,
+                },
+                tweak_background = {
+                    normal = "none",
+                    telescope = "none",
+                    menu = "none",
+                    popup = "none",
+                },
+                tweak_highlight = {
+                    ["@function"] = {
+                        bold = true,
+                    },
+                    ["@keyword"] = {
+                        bold = true,
+                    },
+                }
+            })
+            ColorMyPencils("lackluster")
+        end,
+    },
+    {
+        "samharju/serene.nvim",
+        lazy = false,
+        enabled = true,
+        priority = 1000,
+        config = function()
+            ColorMyPencils("serene-transparent")
+        end,
+    }
 }

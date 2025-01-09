@@ -5,7 +5,9 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
         require("lualine").setup({
-            options = { theme = "16color", section_separators = '', component_separators = '' },
+            options = { section_separators = '', component_separators = '' },
+            --options = { theme = Color_Scheme, section_separators = '', component_separators = '' },
+            --options = { theme = "16color", section_separators = '', component_separators = '' },
             --options = { theme = "modus-vivendi", },
             extensions = { "toggleterm", "quickfix", "fugitive", "lazy", "trouble" },
             sections = {

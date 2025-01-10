@@ -13,6 +13,15 @@ function ColorMyPencils(color)
     vim.api.nvim_set_hl(0, 'LineNrBelow', { fg='#BFBFBF', bold=false })
 end
 
+function DisableItalics()
+    local hl_groups = vim.api.nvim_get_hl(0, {})
+
+    for key, hl_group in pairs(hl_groups) do
+        if hl_group.italic then
+            vim.api.nvim_set_hl(0, key, vim.tbl_extend("force", hl_group, {italic = false}))
+        end
+    end
+end
 
 Color_Scheme = "serene"
 
@@ -276,6 +285,7 @@ return {
         priority = 1000,
         config = function()
             ColorMyPencils("serene-transparent")
+            DisableItalics()
         end,
     }
 }

@@ -44,3 +44,5 @@ map('n', '<leader>gg', "gg=G``", {desc = "Indent entire file and return to last 
 map('n', '<leader>tt', "<cmd>:vs<cr><cmd>term<cr>", { desc = "open a terminal in a vertical split" })
 
 map('n', '<leader>qq', "<cmd>clo<cr>", { desc = "close window" })
+
+map('n', "<leader><esc><esc>", "<cmd>silent nohl<cr>", { desc = "disable search highlight" })

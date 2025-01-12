@@ -2,6 +2,7 @@ return {
 
     { 
         "folke/zen-mode.nvim",
+        cmd = "ZenMode",
         config = function()
             require("zen-mode").setup({
                 window = {
@@ -28,11 +29,11 @@ return {
     },
     {
         "folke/twilight.nvim",
-        enabled = false,
+        cmd = "Twilight",
         config = function()
             require("twilight").setup({
                 dimming = {
-                    alpha = 0.50,
+                    alpha = 0.9,
                 },
             })
         end

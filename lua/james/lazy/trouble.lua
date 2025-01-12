@@ -19,9 +19,10 @@ return {
                 },
             },
         })
-
-        vim.keymap.set("n", "<leader>tr", "<cmd>Trouble diagnostics toggle focus=true filter.buf=0<cr>", { desc = "Trouble Toggle current file" })
-        vim.keymap.set("n", "<leader>te", "<cmd>Trouble diagnostics toggle focus=true<cr>", { desc = "Trouble Toggle all files" })
+        local map = vim.keymap.set
+        map("n", "<leader>tr", "<cmd>Trouble diagnostics toggle focus=true filter.buf=0<cr>", { desc = "Trouble diagonostics current file" })
+        map("n", "<leader>te", "<cmd>Trouble diagnostics toggle focus=true<cr>", { desc = "Trouble diagonostics all files" })
+        map("n", "<leader>tq", "<cmd>Trouble qflist toggle<cr>", { desc = "Trouble quickfix list" })
 
     end
 }

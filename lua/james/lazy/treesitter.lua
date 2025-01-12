@@ -19,5 +19,8 @@ return {
         vim.api.nvim_set_hl(0, 'TreesitterContextLineNumberBottom', { 
             fg = '#FFFFFF' 
         })
-    }
+    },
+    {
+    "JoosepAlviste/nvim-ts-context-commentstring",
+    },
 }

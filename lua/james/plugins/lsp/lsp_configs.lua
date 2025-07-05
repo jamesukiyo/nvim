@@ -176,4 +176,25 @@ LSP_svelte_language_server = {
 	settings = {},
 }
 
+LSP_astro_ls = {
+	cmd = { "astro-ls", "--stdio" },
+	capabilities = capabilities,
+	filetypes = { "astro" },
+	root_markers = { "package.json", "bun.lock", ".git", "tsconfig.json" },
+	settings = {},
+	init_options = {
+		typescript = {
+			tsdk = "node_modules/typescript/lib",
+		},
+	},
+}
+
+LSP_tailwindcss = {
+	cmd = { "tailwindcss-language-server", "--stdio" },
+	capabilities = capabilities,
+	filetypes = { "astro", "svelte", "tsx", "jsx", "html", "vue" },
+	root_markers = { "package.json", "bun.lock", ".git" },
+	settings = {},
+}
+
 return {}

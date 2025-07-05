@@ -16,6 +16,8 @@ return {
 		lsp.config["yamlls"] = LSP_yamlls
 		lsp.config["nushell"] = LSP_nushell
 		lsp.config["svelteserver"] = LSP_svelte_language_server
+		lsp.config["astro"] = LSP_astro_ls
+		lsp.config["tailwindcss"] = LSP_tailwindcss
 
 		lsp.enable({
 			"gopls",
@@ -27,6 +29,8 @@ return {
 			-- "bacon-ls",
 			"nushell",
 			"svelteserver",
+			"astro",
+			"tailwindcss",
 		})
 
 		local orig_util_open_floating_preview = lsp.util.open_floating_preview
@@ -74,6 +78,15 @@ return {
 					},
 				})
 				local client = lsp.get_client_by_id(args.data.client_id)
+
+				MAP("n", "<leader>ih", function()
+					if vim.lsp.inlay_hint.is_enabled() then
+						vim.lsp.inlay_hint.enable(false)
+					else
+						vim.lsp.inlay_hint.enable(true)
+					end
+				end)
+
 				if client:supports_method("textDocument/foldingRange") then
 					vim.wo.foldmethod = "expr"
 					vim.wo.foldexpr = "v:lua.vim.lsp.foldexpr()"

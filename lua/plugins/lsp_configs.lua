@@ -1,4 +1,4 @@
-local blink_cmp = require("blink.cmp")
+local blink_cmp = require("blink_cmp")
 local capabilities = vim.tbl_deep_extend(
 	"force",
 	{},

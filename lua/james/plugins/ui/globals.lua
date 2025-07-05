@@ -10,6 +10,8 @@ function ColorMyPencils(color)
 	SET_HL(0, "LineNrAbove", { fg = "#BFBFBF", bold = false })
 	SET_HL(0, "LineNr", { fg = "white", bold = true })
 	SET_HL(0, "LineNrBelow", { fg = "#BFBFBF", bold = false })
+
+	SET_HL(0, "LspInlayHint", { fg = "#808080" })
 end
 
 function DisableItalic()

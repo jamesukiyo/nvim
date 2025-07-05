@@ -12,7 +12,7 @@ SET_HL = vim.api.nvim_set_hl
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-require("james.set")
-require("james.remap")
-require("james.lazy_init")
-require("james.autocmd")
+require("set")
+require("remap")
+require("lazy_init")
+require("autocmd")

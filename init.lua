@@ -1,2 +1,2 @@
 vim.loader.enable()
-require("james")
+require("init")

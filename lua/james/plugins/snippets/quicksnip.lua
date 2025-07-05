@@ -1,19 +1,14 @@
-CMD([[
-	let g:miniSnip_dirs = ['~/.vim/snippets']
-	let g:miniSnip_trigger = '<C-c>'
-	let g:miniSnip_complkey = ''
-	let g:miniSnip_extends = {
-	\ "html": ["svelte"],
-	\ "svelte": ["typescript", "html"],
-	\ "typescript": ["javascript"],
-	\ "javascript": ["typescript"],
-	\ }
-	map <leader>sc :SnipCurrent<CR>
-	map <leader>sp :SnipPick<CR>
+-- Quicksnip configuration
+vim.cmd([[
+let g:quicksnip_dirs = ['~/.vim/snippets']
+let g:quicksnip_trigger = '<C-c>'
+let g:quicksnip_complkey = ''
+let g:quicksnip_extends = {
+\ "html": ["svelte"],
+\ "svelte": ["typescript", "html"],
+\ "typescript": ["javascript"],
+\ "javascript": ["typescript"],
+\ }
 ]])
-
-return {
-	"jamesukiyo/quicksnip.vim",
-	cmd = { "SnipCurrent", "SnipPick" },
-	keys = { "<leader>sp", "<leader>sc" },
-}
+MAP("n", "<leader>sc", ":SnipCurrent<CR>", { silent = true })
+MAP("n", "<leader>sp", ":SnipPick<CR>", { silent = true })

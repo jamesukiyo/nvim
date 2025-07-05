@@ -1,9 +1,7 @@
-return {
-	"windwp/nvim-autopairs",
-	event = "InsertEnter",
-	config = function()
-		require("nvim-autopairs").setup({
-			disable_filetype = { "typr" },
-		})
-	end,
-}
+vim.pack.add({ { src = "https://github.com/windwp/nvim-autopairs" } })
+
+require("nvim-autopairs").setup({
+	disable_filetype = { "typr" },
+})
+
+return {}

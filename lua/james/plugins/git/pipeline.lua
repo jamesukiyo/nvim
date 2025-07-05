@@ -1,7 +1,3 @@
-return {
-	"topaxi/pipeline.nvim",
-	cmd = "Pipeline",
-	opts = {
-		split = { size = 80 },
-	},
-}
+require("pipeline").setup({
+	split = { size = 80 },
+})

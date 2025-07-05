@@ -1,7 +1,5 @@
-return {
-	"echasnovski/mini.ai",
-	event = "BufRead",
-	config = function()
-		require("mini.ai").setup()
-	end,
-}
+vim.pack.add({ { src = "https://github.com/echasnovski/mini.ai" } })
+
+require("mini.ai").setup()
+
+return {}

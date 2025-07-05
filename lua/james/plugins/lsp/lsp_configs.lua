@@ -196,5 +196,3 @@ LSP_tailwindcss = {
 	root_markers = { "package.json", "bun.lock", ".git" },
 	settings = {},
 }
-
-return {}

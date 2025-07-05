@@ -1,4 +1,2 @@
-return {
-	"ThePrimeagen/vim-be-good",
-	cmd = "VimBeGood",
-}
+-- Vim-be-good game configuration
+-- No setup required

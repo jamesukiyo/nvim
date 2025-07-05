@@ -1,4 +1,2 @@
-return {
-	"vuciv/golf",
-	cmd = "Golf",
-}
+-- Golf game configuration
+-- No setup required

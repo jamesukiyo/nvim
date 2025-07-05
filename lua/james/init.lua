@@ -14,7 +14,7 @@ vim.g.loaded_netrwPlugin = 1
 
 require("james.set")
 require("james.remap")
-require("james.lazy_init")
+require("james.plugins")
 
 AUTOCMD("FileType", {
 	pattern = { "html", "svelte", "lua", "yaml", "json", "css", "wiki", "md" },

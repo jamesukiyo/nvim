@@ -1,7 +1,5 @@
-return {
-	"echasnovski/mini.surround",
-	event = "BufRead",
-	config = function()
-		require("mini.surround").setup()
-	end,
-}
+vim.pack.add({ { src = "https://github.com/echasnovski/mini.surround" } })
+
+require("mini.surround").setup()
+
+return {}

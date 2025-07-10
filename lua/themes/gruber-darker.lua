@@ -1,44 +1,42 @@
 return {
-	-- 	-- blazkowolf is a bit more colourful
-	-- 	-- "blazkowolf/gruber-darker.nvim",
-	-- 	"thimc/gruber-darker.nvim",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		require("gruber-darker").setup({
-	-- 			transparent = true,
-	-- 		})
-	-- 		-- require("gruber-darker").setup({
-	-- 		-- 	bold = true,
-	-- 		-- 	italic = {
-	-- 		-- 		comments = false,
-	-- 		-- 		strings = false,
-	-- 		-- 		folds = false,
-	-- 		-- 		operators = false,
-	-- 		-- 	},
-	-- 		-- 	invert = {
-	-- 		-- 		visual = false,
-	-- 		-- 	},
-	-- 		-- 	undercurl = true,
-	-- 		-- 	underline = true,
-	-- 		-- })
-	--
-	-- 		function DisableGruberUndercurl()
-	-- 			local hl_groups = {
-	-- 				"GruberDarkerRedUnderline",
-	-- 				"GruberDarkerGreenUnderline",
-	-- 				"GruberDarkerYellowUnderline",
-	-- 				"GruberDarkerQuartzUnderline",
-	-- 				"GruberDarkerNiagaraUnderline",
-	-- 				"GruberDarkerWisteriaUnderline",
-	-- 			}
-	-- 			for _, hl in ipairs(hl_groups) do
-	-- 				CMD.highlight(hl .. " gui=underline cterm=underline")
-	-- 			end
+	-- -- blazkowolf is a bit more colourful
+	-- -- "blazkowolf/gruber-darker.nvim",
+	-- "thimc/gruber-darker.nvim",
+	-- lazy = false,
+	-- priority = 1000,
+	-- opts = {
+	-- 	transparent = true,
+	-- 	-- Alternative setup options:
+	-- 	-- bold = true,
+	-- 	-- italic = {
+	-- 	-- 	comments = false,
+	-- 	-- 	strings = false,
+	-- 	-- 	folds = false,
+	-- 	-- 	operators = false,
+	-- 	-- },
+	-- 	-- invert = {
+	-- 	-- 	visual = false,
+	-- 	-- },
+	-- 	-- undercurl = true,
+	-- 	-- underline = true,
+	-- },
+	-- config = function()
+	-- 	local function disable_gruber_undercurl()
+	-- 		local hl_groups = {
+	-- 			"GruberDarkerRedUnderline",
+	-- 			"GruberDarkerGreenUnderline",
+	-- 			"GruberDarkerYellowUnderline",
+	-- 			"GruberDarkerQuartzUnderline",
+	-- 			"GruberDarkerNiagaraUnderline",
+	-- 			"GruberDarkerWisteriaUnderline",
+	-- 		}
+	-- 		for _, hl in ipairs(hl_groups) do
+	-- 			CMD.highlight(hl .. " gui=underline cterm=underline")
 	-- 		end
+	-- 	end
 	--
-	-- 		ColorMyPencils("gruber-darker")
-	-- 		DisableGruberUndercurl()
-	-- 		DisableItalic()
-	-- 	end,
+	-- 	ColorMyPencils("gruber-darker")
+	-- 	disable_gruber_undercurl()
+	-- 	DisableItalic()
+	-- end,
 }

@@ -1,12 +1,11 @@
 return {
 	"nvim-treesitter/nvim-treesitter-context",
 	event = "BufRead",
+	opts = {
+		max_lines = 3,
+		separator = "-",
+	},
 	config = function()
-		require("treesitter-context").setup({
-			max_lines = 3,
-			separator = "-",
-		})
-
 		SET_HL(0, "TreesitterContextLineNumberBottom", {
 			fg = "#FFFFFF",
 		})

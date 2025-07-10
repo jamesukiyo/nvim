@@ -1,40 +1,51 @@
 return {
 	-- "ThePrimeagen/harpoon",
 	-- branch = "harpoon2",
-	-- keys = { "<leader>a" },
-	--
-	-- config = function()
-	-- 	local harpoon = require("harpoon")
-	-- 	harpoon:setup({
-	-- 		settings = {
-	-- 			save_on_toggle = true,
-	-- 			save_on_ui_close = true,
-	-- 		},
-	-- 	})
-	-- 	-- Harpoon Keymaps
-	-- 	MAP(
-	-- 		"n",
-	-- 		"<leader>a",
-	-- 		function() harpoon:list():add() end,
-	-- 		{ desc = "Add to harpoon" }
-	-- 	)
-	-- 	MAP(
-	-- 		"n",
-	-- 		"<C-e>",
-	-- 		function() harpoon.ui:toggle_quick_menu(harpoon:list()) end,
-	-- 		{ desc = "Harpoon menu" }
-	-- 	)
-	--
-	-- 	-- Navigation
-	-- 	MAP("n", "<Leader>h", function() harpoon:list():select(1) end)
-	-- 	MAP("n", "<Leader>j", function() harpoon:list():select(2) end)
-	-- 	MAP("n", "<Leader>k", function() harpoon:list():select(3) end)
-	-- 	MAP("n", "<Leader>l", function() harpoon:list():select(4) end)
-	--
-	-- 	-- Toggle previous & next buffers stored within Harpoon list
-	-- 	-- MAP("n", "<Leader>j", function() harpoon:list():prev() end,
-	-- 	--     { desc = "Previous harpoon" })
-	-- 	-- MAP("n", "<Leader>k", function() harpoon:list():next() end,
-	-- 	--     { desc = "Next harpoon" })
+	-- init = function()
+	-- 	require("harpoon"):setup()
 	-- end,
+	-- keys = {
+	-- 	{
+	-- 		"<leader>a",
+	-- 		function()
+	-- 			require("harpoon"):list():add()
+	-- 		end,
+	-- 	},
+	-- 	{
+	-- 		"<C-e>",
+	-- 		function()
+	-- 			require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())
+	-- 		end,
+	-- 	},
+	-- 	{
+	-- 		"<leader>h",
+	-- 		function()
+	-- 			require("harpoon"):list():select(1)
+	-- 		end,
+	-- 	},
+	-- 	{
+	-- 		"<leader>j",
+	-- 		function()
+	-- 			require("harpoon"):list():select(2)
+	-- 		end,
+	-- 	},
+	-- 	{
+	-- 		"<leader>k",
+	-- 		function()
+	-- 			require("harpoon"):list():select(3)
+	-- 		end,
+	-- 	},
+	-- 	{
+	-- 		"<leader>l",
+	-- 		function()
+	-- 			require("harpoon"):list():select(4)
+	-- 		end,
+	-- 	},
+	-- },
+	-- opts = {
+	-- 	settings = {
+	-- 		save_on_toggle = true,
+	-- 		save_on_ui_close = true,
+	-- 	},
+	-- },
 }

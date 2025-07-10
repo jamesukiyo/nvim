@@ -3,9 +3,7 @@ return {
 	keys = {
 		{ "<leader>nx", ":Telescope nx actions<CR>", desc = "view nx actions" },
 	},
-	config = function()
-		require("nx").setup({
-			nx_cmd_root = "bunx nx",
-		})
-	end,
+	opts = {
+		nx_cmd_root = "bunx nx",
+	},
 }

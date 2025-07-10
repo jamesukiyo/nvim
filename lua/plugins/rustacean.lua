@@ -2,7 +2,7 @@ return {
 	-- "mrcjkb/rustaceanvim",
 	-- version = "^6",
 	-- lazy = false,
-	-- config = function()
+	-- init = function()
 	-- 	vim.g.rustaceanvim = {
 	-- 		tools = {
 	-- 			test_executor = "background",

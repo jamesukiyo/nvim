@@ -35,6 +35,9 @@ o.relativenumber = true
 o.incsearch = true
 o.hlsearch = true
 
+o.showmode = false
+o.showtabline = 0
+
 o.colorcolumn = "80"
 
 o.cursorline = true

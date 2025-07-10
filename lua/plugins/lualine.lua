@@ -59,34 +59,30 @@ return {
 	lazy = false,
 	priority = 900,
 	dependencies = { "nvim-tree/nvim-web-devicons" },
-	config = function()
-		-- require("darkvoid").setup()
-		require("lualine").setup({
-			options = {
-				theme = "auto",
-				disabled_filetypes = { "no-neck-pain" },
-				section_separators = "",
-				component_separators = "",
-				icons_enabled = true,
-			},
-			-- extensions = { "lazy", "mason", "toggleterm", "quickfix", "fugitive", "lazy", "trouble" },
-			sections = {
-				lualine_a = { "mode" },
-				lualine_b = { "branch", diagnostics },
-				lualine_c = { filename, "diff" },
-				lualine_x = { pomo_timer },
-				lualine_y = { file_info, "filetype" },
-				lualine_z = { "location" },
-			},
-			inactive_sections = {
-				lualine_a = { "mode" },
-				lualine_b = { "branch", diagnostics },
-				lualine_c = { filename, "diff" },
-				lualine_x = { pomo_timer },
-				lualine_y = { file_info, "filetype" },
-				lualine_z = { "location" },
-			},
-		})
-		CMD("set noshowmode")
-	end,
+	opts = {
+		options = {
+			theme = "auto",
+			disabled_filetypes = { "no-neck-pain" },
+			section_separators = "",
+			component_separators = "",
+			icons_enabled = true,
+		},
+		-- extensions = { "lazy", "mason", "toggleterm", "quickfix", "fugitive", "lazy", "trouble" },
+		sections = {
+			lualine_a = { "mode" },
+			lualine_b = { "branch", diagnostics },
+			lualine_c = { filename, "diff" },
+			lualine_x = { pomo_timer },
+			lualine_y = { file_info, "filetype" },
+			lualine_z = { "location" },
+		},
+		inactive_sections = {
+			lualine_a = { "mode" },
+			lualine_b = { "branch", diagnostics },
+			lualine_c = { filename, "diff" },
+			lualine_x = { pomo_timer },
+			lualine_y = { file_info, "filetype" },
+			lualine_z = { "location" },
+		},
+	},
 }

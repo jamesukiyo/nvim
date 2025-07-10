@@ -1,17 +1,15 @@
 return {
 	-- "Xiione/vim-apm",
 	-- config = function()
-	-- 	local apm = require("vim-apm")
-	--
-	-- 	apm:setup({})
-	--
-	-- 	MAP("n", "<leader>apm", function() apm:toggle_monitor() end)
-	--
-	-- 	-- AUTOCMD("VimEnter", {
-	-- 	-- 	pattern = "*",
-	-- 	-- 	callback = function()
-	-- 	-- 		apm:toggle_monitor()
-	-- 	-- 	end
-	-- 	-- })
+	-- 	require("apm"):setup({})
 	-- end,
+	--
+	-- keys = {
+	-- 	{
+	-- 		"<leader>apm",
+	-- 		function()
+	-- 			require("apm"):toggle_monitor()
+	-- 		end,
+	-- 	},
+	-- },
 }

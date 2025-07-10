@@ -1,24 +1,29 @@
 return {
 	-- "X3eRo0/dired.nvim",
 	-- dependencies = { "MunifTanjim/nui.nvim" },
-	--
-	-- config = function()
-	-- 	require("dired").setup({
-	-- 		hide_details = false,
-	-- 		sort_order = "dirs",
-	-- 		show_icons = false,
-	-- 		show_hidden = true,
-	-- 		show_banner = true,
-	-- 	})
-	--
-	-- 	local function toggle_dired()
-	-- 		if vim.bo.filetype == "dired" then
-	-- 			CMD("DiredQuit")
-	-- 		else
-	-- 			CMD("Dired")
-	-- 		end
-	-- 	end
-	-- 	MAP("n", "<C-s>", toggle_dired, { desc = "Open Dired" })
-	-- 	MAP("n", "-", ":Dired<cr>", { desc = "Open Dired" })
-	-- end,
+	-- keys = {
+	-- 	{
+	-- 		"<C-s>",
+	-- 		function()
+	-- 			if vim.bo.filetype == "dired" then
+	-- 				CMD("DiredQuit")
+	-- 			else
+	-- 				CMD("Dired")
+	-- 			end
+	-- 		end,
+	-- 		desc = "Open Dired",
+	-- 	},
+	-- 	{
+	-- 		"-",
+	-- 		":Dired<cr>",
+	-- 		desc = "Open Dired",
+	-- 	},
+	-- },
+	-- opts = {
+	-- 	hide_details = false,
+	-- 	sort_order = "dirs",
+	-- 	show_icons = false,
+	-- 	show_hidden = true,
+	-- 	show_banner = true,
+	-- },
 }

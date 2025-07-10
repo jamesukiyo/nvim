@@ -13,6 +13,10 @@ return {
 			end,
 			desc = "Open dirbuf",
 		},
+		{
+			"-",
+			":Dirbuf<CR>",
+		},
 	},
 	opts = {
 		sort_order = "directories_first",

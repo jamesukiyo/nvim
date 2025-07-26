@@ -8,9 +8,9 @@ o.autochdir = false
 o.termguicolors = true
 o.mouse = ""
 
-o.tabstop = 4
-o.softtabstop = 4
-o.shiftwidth = 4
+o.tabstop = 8
+o.softtabstop = 8
+o.shiftwidth = 8
 o.expandtab = false
 
 o.pumheight = 8

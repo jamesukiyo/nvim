@@ -1,3 +1,7 @@
+vim.bo.tabstop = 8
+vim.bo.shiftwidth = 8
+vim.bo.softtabstop = 8
+
 -- was for rustaceanvim but now using ferris.nvim
 
 -- local bufnr = vim.api.nvim_get_current_buf()

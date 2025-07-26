@@ -33,8 +33,28 @@ require("lazy").setup({
 	change_detection = { notify = false },
 	-- Configure any other settings here. See the documentation for more details.
 	-- colorscheme that will be used when installing plugins.
-	install = { colorscheme = { "gruber-darker" } },
+	install = { colorscheme = { "auto" } },
 	-- automatically check for plugin updates
-	checker = { enabled = true, notify = false },
+	checker = { enabled = true, notify = true, concurrency = 24 },
 	ui = { border = "single", backdrop = 95 },
+	performance = {
+		rtp = {
+			disabled_plugins = {
+				"gzip",
+				"netrwPlugin",
+				"tarPlugin",
+				"tohtml",
+				"tutor",
+				"zipPlugin",
+				"matchit",
+				"rplugin",
+			},
+		},
+	},
+})
+
+AUTOCMD("VimEnter", {
+	callback = function()
+		require("lazy").update({ show = false })
+	end,
 })

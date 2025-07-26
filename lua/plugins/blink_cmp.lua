@@ -1,7 +1,9 @@
 return {
 	"saghen/blink.cmp",
 	event = "BufRead",
-	version = "1.*",
+	enabled = true,
+	version = "1.4", -- NOTE: 1.4 until fixed: https://github.com/LazyVim/LazyVim/pull/6183
+	build = "cargo build --release",
 	opts = {
 		keymap = { preset = "enter" },
 		completion = {

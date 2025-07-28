@@ -1,22 +1,40 @@
--- Global variables
-CMD = vim.cmd
-AUTOCMD = vim.api.nvim_create_autocmd
-AUGROUP = vim.api.nvim_create_augroup
-CREATE_CMD = vim.api.nvim_create_user_command
-MAP = vim.keymap.set
-SET_HL = vim.api.nvim_set_hl
+local g = "https://github.com/"
+vim.pack.add({
+	{ src = g .. "kvrohit/rasmus.nvim" },
+	{ src = g .. "haystackandroid/rusticated" },
+})
 
--- Global functions
+-- rasmus
+function FixRasmus()
+	local highlights = {
+		SpellBad = { undercurl = false, underline = true },
+		SpellCap = { undercurl = false, underline = true },
+		SpellLocal = { undercurl = false, underline = true },
+		SpellRare = { undercurl = false, underline = true },
+		DiffAdd = { reverse = false },
+		DiffChange = { reverse = false },
+		DiffDelete = { reverse = false },
+	}
+
+	for group, opts in pairs(highlights) do
+		SET_HL(0, group, opts)
+	end
+end
+
+-- rusticated
+function FixRusticated()
+	SET_HL(0, "DiffAdd", { fg = "#1e1e1e", bg = "#98c379" })
+	SET_HL(0, "DiffAdded", { fg = "#1e1e1e", bg = "#98c379" })
+	SET_HL(0, "DiffTextAdd", { fg = "#1e1e1e", bg = "#98c379" })
+	SET_HL(0, "DiffText", { fg = "#1e1e1e", bg = "#98c379" })
+end
+
+-- helper functions
 function ColorMyPencils(color, theme, transparent)
 	vim.o.background = theme or "light"
 	CMD.colorscheme(color or "default")
 	require("fidget").notify(
-		"background: "
-			.. vim.o.background
-			.. "\n theme: "
-			.. theme
-			.. "\n colorscheme: "
-			.. color
+		"background: " .. vim.o.background .. "\n theme: " .. theme .. "\n colorscheme: " .. color
 	)
 
 	-- general tweaks
@@ -71,43 +89,3 @@ function DisableUndercurl()
 		SET_HL(0, group, opts)
 	end
 end
-
-function FixRasmus()
-	local highlights = {
-		SpellBad = { undercurl = false, underline = true },
-		SpellCap = { undercurl = false, underline = true },
-		SpellLocal = { undercurl = false, underline = true },
-		SpellRare = { undercurl = false, underline = true },
-		DiffAdd = { reverse = false },
-		DiffChange = { reverse = false },
-		DiffDelete = { reverse = false },
-	}
-
-	for group, opts in pairs(highlights) do
-		SET_HL(0, group, opts)
-	end
-end
-
-function FixRusticated()
-	SET_HL(0, "DiffAdd", {
-		fg = "#1e1e1e",
-		bg = "#98c379",
-	})
-
-	SET_HL(0, "DiffAdded", {
-		fg = "#1e1e1e",
-		bg = "#98c379",
-	})
-
-	SET_HL(0, "DiffTextAdd", {
-		fg = "#1e1e1e",
-		bg = "#98c379",
-	})
-
-	SET_HL(0, "DiffText", {
-		fg = "#1e1e1e",
-		bg = "#98c379",
-	})
-end
-
-return {}

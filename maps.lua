@@ -53,9 +53,4 @@ MAP(
 
 MAP("n", "<leader>qq", "<cmd>clo<cr>", { desc = "close window" })
 
-MAP(
-	"n",
-	"<leader><esc><esc>",
-	"<cmd>silent nohl<cr>",
-	{ desc = "disable search highlight" }
-)
+MAP("n", "<leader><esc><esc>", "<cmd>silent nohl<cr>", { desc = "disable search highlight" })

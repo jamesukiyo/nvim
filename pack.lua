@@ -3,15 +3,16 @@ vim.pack.add({
 	-- deps
 	{ src = g .. "nvim-treesitter/nvim-treesitter" }, -- treesitter as early as possible
 	{ src = g .. "nvim-lua/plenary.nvim" },
-	{ src = g .. "m00qek/baleia.nvim", version = vim.version.range("1.3.0") },
+	{ src = g .. "m00qek/baleia.nvim", version = vim.version.range("1.3") },
 	{ src = g .. "muniftanjim/nui.nvim" },
 	{ src = g .. "nvim-tree/nvim-web-devicons" },
 	{ src = g .. "sindrets/diffview.nvim" },
 	{ src = g .. "nvzone/volt" },
 
 	-- plugins
+	{ src = g .. "folke/snacks.nvim" },
 	{ src = g .. "windwp/nvim-autopairs" },
-	{ src = g .. "saghen/blink.cmp", version = vim.version.range("1.4") },
+	{ src = g .. "saghen/blink.cmp", version = vim.version.range("1.6") },
 	{ src = g .. "uga-rosa/ccc.nvim" },
 	{ src = g .. "stevearc/conform.nvim" },
 	{ src = g .. "saecki/crates.nvim" },
@@ -20,10 +21,7 @@ vim.pack.add({
 	{ src = g .. "vxpm/ferris.nvim" },
 	{ src = g .. "j-hui/fidget.nvim" },
 	{ src = g .. "nvim-lualine/lualine.nvim" },
-	{ src = g .. "echasnovski/mini.ai" },
-	{ src = g .. "echasnovski/mini.bufremove" },
-	{ src = g .. "echasnovski/mini.diff" },
-	{ src = g .. "echasnovski/mini.surround" },
+	{ src = g .. "echasnovski/mini.nvim" },
 	{ src = g .. "neogitorg/neogit" },
 	{ src = g .. "shortcuts/no-neck-pain.nvim" },
 	{ src = g .. "vuki656/package-info.nvim" },
@@ -33,7 +31,6 @@ vim.pack.add({
 	{ src = g .. "meanderingprogrammer/render-markdown.nvim" },
 	{ src = g .. "b0o/schemastore.nvim" },
 	{ src = g .. "aasim-a/scrolleof.nvim" },
-	{ src = g .. "jamesukiyo/search-this.nvim" },
 	{ src = g .. "supermaven-inc/supermaven-nvim" },
 	{ src = g .. "nvim-telescope/telescope.nvim" },
 	{ src = g .. "rachartier/tiny-inline-diagnostic.nvim" },
@@ -42,18 +39,10 @@ vim.pack.add({
 	{ src = g .. "folke/twilight.nvim" },
 	{ src = g .. "nvzone/typr" },
 	{ src = g .. "mbbill/undotree" },
-	{ src = g .. "theprimeagen/vim-be-good" },
 	{ src = g .. "vimwiki/vimwiki" },
 	{ src = g .. "natecraddock/workspaces.nvim" },
 	{ src = g .. "folke/zen-mode.nvim" },
 	{ src = g .. "matbme/jabs.nvim" },
-
-	-- treesitter-dependent plugins
-	{ src = g .. "code-biscuits/nvim-biscuits" },
-	{ src = g .. "nvim-treesitter/nvim-treesitter-context" },
-	{ src = g .. "nvim-treesitter/nvim-treesitter-textobjects" },
-	{ src = g .. "windwp/nvim-ts-autotag" },
-	{ src = g .. "joosepalviste/nvim-ts-context-commentstring" },
 })
 
 -- treesitter
@@ -82,6 +71,15 @@ require("nvim-treesitter.configs").setup({
 	indent = { enable = true },
 })
 
+-- treesitter-dependent plugins
+vim.pack.add({
+	{ src = g .. "code-biscuits/nvim-biscuits" },
+	{ src = g .. "nvim-treesitter/nvim-treesitter-context" },
+	{ src = g .. "nvim-treesitter/nvim-treesitter-textobjects" },
+	{ src = g .. "windwp/nvim-ts-autotag" },
+	{ src = g .. "joosepalviste/nvim-ts-context-commentstring" },
+})
+
 -- treesitter-context
 require("treesitter-context").setup({
 	max_lines = 3,
@@ -90,12 +88,18 @@ require("treesitter-context").setup({
 
 SET_HL(0, "TreesitterContextLineNumberBottom", {
 	fg = "#FFFFFF",
+	bg = "NONE",
 })
 SET_HL(0, "TreesitterContextSeparator", {
 	fg = "#363636",
+	bg = "NONE",
 })
 
 -- treesitter-textobjects
+
+require("snacks").setup({
+	profiler = {},
+})
 
 -- autopairs
 require("nvim-autopairs").setup({
@@ -107,7 +111,7 @@ require("nvim-biscuits").setup({
 	cursor_line_only = true,
 	prefix_string = " ",
 	toggle_keybind = "<leader>bi",
-	show_on_start = false,
+	show_on_start = true,
 })
 
 -- blink
@@ -199,11 +203,13 @@ require("darklight").setup({
 		ColorMyPencils("rusticated", "light", true)
 		DisableBold()
 		DisableItalic()
+		DisableUndercurl()
 	end,
 	dark_mode_callback = function()
 		ColorMyPencils("rasmus", "dark", true)
 		DisableBold()
 		DisableItalic()
+		DisableUndercurl()
 	end,
 })
 
@@ -434,11 +440,6 @@ require("render-markdown").setup({
 
 -- scrolleof
 require("scrollEOF").setup({})
-
--- search-this
-require("search-this").setup({
-	default_engine = "ddg",
-})
 
 -- supermaven
 require("supermaven-nvim").setup({})

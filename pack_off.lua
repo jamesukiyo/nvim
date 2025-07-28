@@ -11,6 +11,8 @@ vim.pack.add({
 	{ src = g .. "equilibris/nx.nvim" },
 	{ src = g .. "topaxi/pipeline.nvim" },
 	{ src = g .. "leath-dub/snipe.nvim" },
+	{ src = g .. "jamesukiyo/search-this.nvim" },
+	{ src = g .. "theprimeagen/vim-be-good" },
 })
 
 -- dired
@@ -114,3 +116,8 @@ MAP("n", "<leader>fb", function() require("snipe").open_buffer_menu() end)
 -- compile-mode
 MAP("n", "<leader>co", ":vert Compile<cr>")
 MAP("n", "<leader>cr", ":vert Recompile<cr>")
+
+-- search-this
+require("search-this").setup({
+	default_engine = "ddg",
+})

@@ -1,5 +1,12 @@
 vim.loader.enable()
 
+-- profiler
+if vim.env.PROF then
+	local snacks = vim.fn.stdpath("data") .. "/site/pack/core/opt/snacks.nvim"
+	vim.opt.rtp:append(snacks)
+	require("snacks.profiler").startup({})
+end
+
 -- disable netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -13,11 +20,11 @@ MAP = vim.keymap.set
 SET_HL = vim.api.nvim_set_hl
 
 -- allows for non lua/* config
-dofile(vim.fn.stdpath("config") .. "/colors.lua")
 dofile(vim.fn.stdpath("config") .. "/opts.lua")
 dofile(vim.fn.stdpath("config") .. "/maps.lua")
 dofile(vim.fn.stdpath("config") .. "/autocmd.lua")
 dofile(vim.fn.stdpath("config") .. "/pre.lua")
 dofile(vim.fn.stdpath("config") .. "/pack.lua")
+dofile(vim.fn.stdpath("config") .. "/colors.lua")
 dofile(vim.fn.stdpath("config") .. "/lsp.lua")
 dofile(vim.fn.stdpath("config") .. "/auto_colors.lua")
